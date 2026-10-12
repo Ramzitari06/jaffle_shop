@@ -2,6 +2,8 @@
 
   {%- set tables = dbt_utils.get_relations_by_prefix(database=database, schema=schema, prefix=prefix) -%}
 
+  {{ log("Tables trouvées : " ~ tables, info=True) }}
+
   {% for table in tables %}
 
       {%- if not loop.first -%}

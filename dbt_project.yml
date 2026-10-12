@@ -39,6 +39,9 @@ models:
   Jaffle_shop:
     # Applies to all files under models/staging/
     staging:
-      +materialized: view 
+      #+materialized: view 
+      +schema : staging
     marts:
       +materialized: table  #ces tables vont etre requeté par la BI  on garde comme table pour eviter que ça se rafferchie a chaque lancement
+    snowflake_spend:
+      +enabled: true 
